@@ -13,4 +13,9 @@ class Accounts:
         self.accountname = accountname
         self.accountbalance = accountbalance
 
-    
+    def save_account(self):
+        '''
+        Save account method for saving the account object in the account_list
+        '''
+        Accounts.account_list.append(self)
+        
