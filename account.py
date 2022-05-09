@@ -18,4 +18,17 @@ class Accounts:
         Save account method for saving the account object in the account_list
         '''
         Accounts.account_list.append(self)
-        
+
+    @classmethod
+    def account_exist(cls, accountname):
+        '''
+        Method for checking if an account exists from the account list
+        Args:
+            accountname: The name of the account holder
+        Return:
+            Boolean: True of False depending on whether the account name has been found or not.
+        '''
+        for account in cls.account_list:
+            if account.accountname == accountname:
+                return True
+        return False
