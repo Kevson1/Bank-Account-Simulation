@@ -13,6 +13,11 @@ class TestAccounts(unittest.TestCase):
         '''
         self.new_account = Accounts("Kevson", "0")
 
-    
+    def tearDown(self):
+        '''
+        Method that cleans up after every testcase:
+        '''
+        Accounts.account_list = []
+
     if __name__=='__main__':
         unittest.main()
