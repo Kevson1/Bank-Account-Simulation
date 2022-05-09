@@ -11,7 +11,7 @@ class TestAccounts(unittest.TestCase):
         '''
         Setup method to run before each test case.
         '''
-        self.new_account = Accounts("Kevson", "0")
+        self.new_account = Accounts("Kevson", 0)
 
     def tearDown(self):
         '''
@@ -19,5 +19,12 @@ class TestAccounts(unittest.TestCase):
         '''
         Accounts.account_list = []
 
-    if __name__=='__main__':
-        unittest.main()
+    def test_init(self):
+        '''
+        Test to check if the Accounts object is initialized properly
+        '''
+        self.assertEqual(self.new_account.accountname, "Kevson")
+        self.assertEqual(self.new_account.accountbalance, 0)
+
+if __name__=='__main__':
+    unittest.main()
